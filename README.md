@@ -4,6 +4,18 @@ A modern, production-ready template for building full-stack React applications u
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
+## Create Project
+
+
+```bash
+npx create-react-router@7.0.1
+```
+
+## ReactRouter Framework
+
+root.tsx 파일 이름은 변경 불가
+
+
 ## Features
 
 - 🚀 Server-side rendering
