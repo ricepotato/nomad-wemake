@@ -2,7 +2,7 @@ import { Button } from "~/common/components/ui/button";
 
 export default function HomePage() {
   return (
-    <main className="container mx-auto py-16">
+    <main className="container mx-auto py-10">
       <div className="max-w-2xl">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">
           Welcome to Our App
