@@ -6,7 +6,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuContent,
+  NavigationMenuLink,
 } from "./ui/navigation-menu";
+import { cn } from "~/lib/utils";
 
 const menus = [
   {
@@ -133,11 +135,31 @@ export default function Navigation() {
               <NavigationMenuItem key={menu.name}>
                 <NavigationMenuTrigger>{menu.name}</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  {menu.items?.map((item) => (
-                    <NavigationMenuItem key={item.name}>
-                      <Link to={item.to}>{item.name}</Link>
-                    </NavigationMenuItem>
-                  ))}
+                  <ul className="grid w-[500px] font-light gap-3 p-4 grid-cols-2">
+                    {menu.items?.map((item) => (
+                      <NavigationMenuItem
+                        key={item.name}
+                        className={cn(
+                          "select-none rounded-md transition-colors hover:bg-accent focus:bg-accent",
+                          item.to === "/products/promote" && "bg-accent"
+                        )}
+                      >
+                        <NavigationMenuLink asChild>
+                          <Link
+                            className="p-3 space-y-1 block leading-none no-underline outline-none"
+                            to={item.to}
+                          >
+                            <span className="text-sm font-medium leading-none">
+                              {item.name}
+                            </span>
+                            <p className="text-sm leading-snug text-muted-foreground">
+                              {item.description}
+                            </p>
+                          </Link>
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                    ))}
+                  </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
             ))}
