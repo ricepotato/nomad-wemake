@@ -42,10 +42,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <>
-  <Navigation />
-  <Outlet />;
-  </>
+  return (
+    <>
+      <Navigation
+        isLoggedIn={true}
+        hasMessages={true}
+        hasNotifications={true}
+      />
+      <Outlet />;
+    </>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

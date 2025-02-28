@@ -15,6 +15,11 @@ npx create-react-router@7.0.1
 
 root.tsx 파일 이름은 변경 불가
 
+### shadcn/ui 추가
+
+```bash
+npx shadcn@latest add avatar
+```
 
 ## Features
 
