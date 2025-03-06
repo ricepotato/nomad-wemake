@@ -1,19 +1,30 @@
-import { Button } from "~/common/components/ui/button";
+import { ProductCard } from "~/features/products/components/product-card";
 
 export default function HomePage() {
   return (
-    <main className="container mx-auto py-10">
-      <div className="max-w-2xl">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">
-          Welcome to Our App
-        </h1>
-        <p className="text-xl text-muted-foreground mb-8">
-          A modern web application built with React Router, TypeScript, and Shadcn UI.
-        </p>
-        <Button size="lg">Get Started</Button>
+    <div className="px-20">
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <h2 className="text-5xl font-bold leading-tight tracking-tight">
+            Today's Products
+          </h2>
+          <p className="text-xl font-light text-foreground">
+            The best products made by our community today
+          </p>
+        </div>
+        <div>
+          {Array.from({ length: 10 }).map((_, index) => (
+            <ProductCard
+              id="productId"
+              name="Product Name"
+              description="Product Description"
+              commentsCount={12}
+              viewsCount={12}
+              upvotesCount={120}
+            />
+          ))}
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
-
-
